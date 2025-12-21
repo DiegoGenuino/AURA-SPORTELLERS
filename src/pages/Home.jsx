@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from "./Home.module.css";
 import navLogo from "../assets/logo.svg";
 import heroTitle from "../assets/copy-aura.svg";
+import theOriginalText from "../assets/theoriginal-text.svg";
+import sportellersText from "../assets/sportellers-text.svg";
 import ctaIcon from "../assets/element-logo-aura.svg";
 import ctaIconGreen from "../assets/element-logo-aura-green.svg";
 
@@ -63,6 +65,10 @@ const Home = () => {
           alt="the original sportellers"
           className={styles.heroTitle}
         />
+        <div className={styles.heroTitleMobile}>
+          <img src={theOriginalText} alt="the original" className={styles.heroTextLine} />
+          <img src={sportellersText} alt="sportellers" className={styles.heroTextLine} />
+        </div>
 
         <div className={styles.textContent}>
           <div className={styles.contentBlock}>
