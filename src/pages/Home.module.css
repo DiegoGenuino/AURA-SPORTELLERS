@@ -149,11 +149,11 @@
   height: min-content;
   display: flex;
   align-items: center;
-  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.3s ease;
 }
 
 .ctaButtonContainer:hover {
-  transform: translateX(-1rem);
+  transform: translateY(-1rem);
 }
 
 .ctaButton {
@@ -456,7 +456,13 @@
   }
 
   .ctaButtonContainer {
-    transform: scale(0.9);
+  
+  }
+  
+  /* Preserve scale on hover for touch devices to avoid jump */
+  .ctaButtonContainer:hover {
+    transform: translateX(-1rem);
+    transform-origin: left;
   }
 
   .ctaButton {
@@ -520,7 +526,7 @@
   }
 
   .footerCtaIcon {
-    transform: scale(0.8);
+   
   }
 }
 
@@ -545,8 +551,13 @@
   }
 
   .ctaButtonContainer {
-    transform: scale(0.85);
+ 
     transform-origin: left;
+  }
+  
+  /* Preserve scale on hover for small phones as well */
+  .ctaButtonContainer:hover {
+    transform: translateY(-0.5rem) ;
   }
 
   .menuText {

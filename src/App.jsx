@@ -1,10 +1,12 @@
 import './App.css'
 import Home from './pages/Home'
+import LoadingScreen from './components/LoadingScreen'
 
 function App() {
   return (
     <>
-    <Home/>
+      <LoadingScreen />
+      <Home/>
     </>
   )
 }
