@@ -7,6 +7,7 @@ import sportellersText from "../assets/sportellers-text.svg";
 import ctaIcon from "../assets/element-logo-aura.svg";
 import ctaIconGreen from "../assets/element-logo-aura-green.svg";
 import camisetaAura from "../assets/camiseta-aura.png";
+import IconAuraStories from "../assets/stories-icon.svg";
 
 // Media imports
 import cardImg1 from "../assets/videosandphotos/photoUm.jpg";
@@ -18,6 +19,14 @@ import cardImg5 from "../assets/videosandphotos/photoCinco.jpg";
 import cardImg6 from "../assets/videosandphotos/photoSeis.jpg";
 import cardVideo2 from "../assets/videosandphotos/videoDois.webm";
 
+import sisuLogo from "../assets/logos/sisu-logo.svg";
+import goldenGoalLogo from "../assets/logos/goldengoal-logo.svg";
+import fengLogo from "../assets/logos/feng-logo.svg";
+import sportInsiderLogo from "../assets/logos/sportinsider-logo.svg";
+import tinmoLogo from "../assets/logos/tinmo-logo.svg";
+
+import aboutImage from "../assets/videosandphotos/about-image.svg";
+
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visibleCards, setVisibleCards] = useState({});
@@ -28,6 +37,18 @@ const Home = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+    // Bloquear scroll quando menu estiver aberto
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
 
   // Media items array com velocidades de parallax diferentes para cada card
   const mediaItems = [
@@ -83,6 +104,46 @@ const Home = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [visibleCards]);
+
+  useEffect(() => {
+    // Espera 4500ms (um pouco mais que a splash de 4300ms)
+    const splashDelay = setTimeout(() => {
+      const handleScroll = () => {
+        const aboutSection = document.querySelector(`.${styles.aboutSection}`);
+        const aboutContent = document.querySelector(`.${styles.aboutContent}`);
+
+        if (!aboutSection || !aboutContent) return;
+
+        const rect = aboutSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Para animação que acontece só uma vez:
+        if (
+          rect.top <= windowHeight * 0.1 &&
+          !aboutContent.classList.contains(styles.contentVisible)
+        ) {
+          aboutContent.classList.add(styles.contentVisible);
+        }
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const imageProgress = Math.min(
+            1,
+            Math.max(0, 1 - rect.top / windowHeight)
+          );
+          setParallaxY(-imageProgress * 80);
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+
+      // Cleanup está dentro do timeout agora
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, 4500);
+
+    // Cleanup do timeout
+    return () => clearTimeout(splashDelay);
+  }, []);
 
   return (
     <main className={styles.main}>
@@ -186,11 +247,6 @@ Talentos em potência.`}
 
       {/* Seção Stories */}
       <section className={styles.storiesSection}>
-        {/* Header */}
-        <div className={styles.storiesHeader}>
-          <p className={styles.storiesKicker}>HISTÓRIAS QUE EMANAM.</p>
-        </div>
-
         {/* Marquee de fundo */}
         <div className={styles.marqueeWrapper} aria-hidden="true">
           <div className={styles.marqueeRow}>
@@ -203,10 +259,10 @@ Talentos em potência.`}
           </div>
           <div className={styles.marqueeRow}>
             <div className={`${styles.marqueeTrack} ${styles.marqueeReverse}`}>
-              <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
-              <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
-              <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
-              <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
+              <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
+              <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
+              <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
+              <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
             </div>
           </div>
         </div>
@@ -214,13 +270,26 @@ Talentos em potência.`}
         {/* Camiseta showcase */}
         <div className={styles.jerseyShowcase}>
           <div className={styles.jerseyContainer}>
-            <img src={camisetaAura} alt="Camiseta Aura" className={styles.jerseyImage} />
-        
+            <img
+              src={camisetaAura}
+              alt="Camiseta Aura"
+              className={styles.jerseyImage}
+            />
+            <img
+              src={IconAuraStories}
+              alt="Icon Aura"
+              className={styles.iconAuraStories}
+            />
           </div>
         </div>
 
         {/* Conteúdo de texto - sticky */}
         <div className={styles.storiesContent}>
+          {/* Header */}
+          <div className={styles.storiesHeader}>
+            <p className={styles.storiesKicker}>HISTÓRIAS QUE EMANAM.</p>
+          </div>
+
           <h2 className={styles.storiesTitle}>
             SEM EXCESSOS.
             <br />
@@ -259,6 +328,41 @@ Talentos em potência.`}
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Sobre nós seção */}
+
+      <section className={styles.aboutSection}>
+        <div className={styles.aboutContent}>
+          <div className={styles.aboutText}>
+            <div className={styles.aboutTitle}>
+              <span className={styles.aboutKicker}>QUEM SOMOS</span>
+              <h1 className={styles.aboutTitleText}>
+                Uma visão.
+                <br />
+                Múltiplas
+                <br />
+                expertises.
+              </h1>
+            </div>
+            <p className={styles.aboutDescription}>
+              A AURA nasce dentro do Grupo SISU, uma holding especializada em
+              posicionamento, branding, criatividade e negócios no esporte,
+              formada por empresas que se complementam em profundidade
+              estratégica e rigor estético.
+            </p>
+          </div>
+          <div className={styles.aboutImageParallax}>
+            <img src={aboutImage} alt="Atleta" className={styles.aboutImage} />
+          </div>
+          <div className={styles.aboutLogos}>
+            <img src={sisuLogo} alt="SISU" />
+            <img src={goldenGoalLogo} alt="Golden Goal" />
+            <img src={fengLogo} alt="Feng" />
+            <img src={sportInsiderLogo} alt="Sport Insider" />
+            <img src={tinmoLogo} alt="Tinmo" />
+          </div>
         </div>
       </section>
     </main>
