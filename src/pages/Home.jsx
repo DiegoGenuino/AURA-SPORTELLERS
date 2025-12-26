@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.css";
+import stylesTeamSection from "./Team.module.css";
+import Services from "../components/Services";
+import Atletas from "../components/Atletas";
+import ContactFooter from "../components/ContactFooter";
 import navLogo from "../assets/logo.svg";
 import heroTitle from "../assets/copy-aura.svg";
 import theOriginalText from "../assets/theoriginal-text.svg";
@@ -24,6 +28,7 @@ import goldenGoalLogo from "../assets/logos/goldengoal-logo.svg";
 import fengLogo from "../assets/logos/feng-logo.svg";
 import sportInsiderLogo from "../assets/logos/sportinsider-logo.svg";
 import tinmoLogo from "../assets/logos/tinmo-logo.svg";
+import auraLogoWithEffect from "../assets/teamSection/logo-aura-with-effect.svg";
 
 import aboutImage from "../assets/videosandphotos/about-image.svg";
 
@@ -31,6 +36,7 @@ const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visibleCards, setVisibleCards] = useState({});
   const [parallaxOffsets, setParallaxOffsets] = useState({});
+  const [parallaxY, setParallaxY] = useState(0);
   const cardsRef = useRef(null);
   const sectionRef = useRef(null);
 
@@ -38,15 +44,15 @@ const Home = () => {
     setMenuOpen(!menuOpen);
   };
 
-    // Bloquear scroll quando menu estiver aberto
+  // Bloquear scroll quando menu estiver aberto
   useEffect(() => {
     if (menuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [menuOpen]);
 
@@ -152,9 +158,8 @@ const Home = () => {
           <img src={navLogo} alt="Logo Aura" className={styles.logo} />
         </div>
         <div
-          className={`${styles.menuIcon} ${
-            menuOpen ? styles.menuIconOpen : ""
-          }`}
+          className={`${styles.menuIcon} ${menuOpen ? styles.menuIconOpen : ""
+            }`}
           onClick={toggleMenu}
         >
           <span className={styles.menuLine}></span>
@@ -246,7 +251,7 @@ Talentos em potência.`}
       </section>
 
       {/* Seção Stories */}
-      <section className={styles.storiesSection}>
+      <section id="atletas" className={styles.storiesSection}>
         {/* Marquee de fundo */}
         <div className={styles.marqueeWrapper} aria-hidden="true">
           <div className={styles.marqueeRow}>
@@ -312,9 +317,8 @@ Talentos em potência.`}
               key={index}
               data-card
               data-index={index}
-              className={`${styles.mediaCard} ${
-                styles[`card${index + 1}`] || ""
-              } ${visibleCards[index] ? styles.visible : ""}`}
+              className={`${styles.mediaCard} ${styles[`card${index + 1}`] || ""
+                } ${visibleCards[index] ? styles.visible : ""}`}
               style={{
                 transform: visibleCards[index]
                   ? `translateY(${parallaxOffsets[index] || 0}px)`
@@ -333,7 +337,7 @@ Talentos em potência.`}
 
       {/* Sobre nós seção */}
 
-      <section className={styles.aboutSection}>
+      <section id="sobre" className={styles.aboutSection}>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
             <div className={styles.aboutTitle}>
@@ -365,6 +369,47 @@ Talentos em potência.`}
           </div>
         </div>
       </section>
+
+      <section className={stylesTeamSection.teamSection}>
+        <div className={stylesTeamSection.containerLeft}>
+          <div className={stylesTeamSection.containerLeftContent}>
+            <h1 className={stylesTeamSection.containerLeftTitle}>
+              Nossa equipe
+            </h1>
+            <p className={stylesTeamSection.containerLeftParagraph}>
+              Nossa operação reúne profissionais que já trabalharam com atletas,
+              clubes, marcas e projetos esportivos em diferentes níveis
+              — branding, marketing, gestão de imagem, conteúdo, audiovisual e
+              estratégia cultural.
+            </p>
+          </div>
+        </div>
+        <div className={stylesTeamSection.containerRight}>
+          <div className={stylesTeamSection.containerRightContent}>
+            <p className={stylesTeamSection.containerRightText}>
+              Estética precisa.
+              <br />
+              Narrativa profunda.
+              <br />
+              Gestão inteligente.
+              <br />
+              A soma
+              que transforma identidade em valor.
+            </p>
+            <img
+              src={auraLogoWithEffect}
+              alt="Logo AURA"
+              className={stylesTeamSection.containerRightLogo}
+            />
+          </div>
+        </div>
+      </section>
+
+      <Services />
+
+      <Atletas />
+
+      <ContactFooter />
     </main>
   );
 };
