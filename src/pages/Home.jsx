@@ -176,6 +176,7 @@ const Home = () => {
           <a
             href="#sobre"
             className={`${styles.menuLink} ${styles.menuLinkLeft}`}
+            onClick={() => setMenuOpen(false)}
           >
             <span className={styles.menuNumber}>/01</span>
             <span className={styles.menuText}>SOBRE NÓS</span>
@@ -183,6 +184,7 @@ const Home = () => {
           <a
             href="#servicos"
             className={`${styles.menuLink} ${styles.menuLinkRight}`}
+            onClick={() => setMenuOpen(false)}
           >
             <span className={styles.menuNumber}>/02</span>
             <span className={styles.menuText}>SERVIÇOS</span>
@@ -190,6 +192,7 @@ const Home = () => {
           <a
             href="#atletas"
             className={`${styles.menuLink} ${styles.menuLinkCenter}`}
+            onClick={() => setMenuOpen(false)}
           >
             <span className={styles.menuNumber}>/03</span>
             <span className={styles.menuText}>ATLETAS</span>
@@ -251,7 +254,7 @@ Talentos em potência.`}
       </section>
 
       {/* Seção Stories */}
-      <section id="atletas" className={styles.storiesSection}>
+      <section className={styles.storiesSection}>
         {/* Marquee de fundo */}
         <div className={styles.marqueeWrapper} aria-hidden="true">
           <div className={styles.marqueeRow}>

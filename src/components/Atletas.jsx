@@ -85,7 +85,7 @@ const Atletas = () => {
     }, [visibleCards]);
 
     return (
-        <section id="atletas-section" className={styles.atletasSection} ref={sectionRef}>
+        <section id="atletas" className={styles.atletasSection} ref={sectionRef}>
             {/* Sticky Header Wrapper */}
             <div className={styles.stickyWrapper}>
                 <div className={styles.headerContainer}>
