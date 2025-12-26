@@ -1161,7 +1161,7 @@
 
   .storiesTitle {
     font-size: clamp(2rem, 10vw, 3rem);
-    line-height: 2rem;
+    line-height: 3rem;
   }
 
   .marqueeWrapper {
