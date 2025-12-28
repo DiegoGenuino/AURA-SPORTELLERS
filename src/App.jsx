@@ -1,6 +1,7 @@
 import './App.css'
 import Home from './pages/Home'
 import LoadingScreen from './components/LoadingScreen/LoadingScreen'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Helmet } from 'react-helmet-async'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <meta name="keywords" content="aura, sportellers, marketing esportivo, branding para atletas, gestão de imagem, sisu group" />
         <meta name="theme-color" content="#EFEDE7" />
       </Helmet>
+      <SpeedInsights />
       <LoadingScreen />
       <Home />
     </>
