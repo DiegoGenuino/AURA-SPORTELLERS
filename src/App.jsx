@@ -2,6 +2,7 @@ import './App.css'
 import Home from './pages/Home'
 import LoadingScreen from './components/LoadingScreen/LoadingScreen'
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 import { Helmet } from 'react-helmet-async'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <SpeedInsights />
       <LoadingScreen />
       <Home />
+      <Analytics />
     </>
   )
 }
