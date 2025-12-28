@@ -1,0 +1,267 @@
+.servicesSection {
+    width: 100%;
+
+    position: relative;
+    /* Removed background-color to rely on video/header layering */
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    /* Creates a new stacking context */
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+.videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Covers the entire section height */
+    /* z-index removed to rely on DOM order (Level 0/auto) */
+    pointer-events: none;
+    /* overflow: hidden; REMOVED per user request to fix bug */
+}
+
+.bgVideo {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+
+/* ================= HEADER SECTION ================= */
+
+/* Wrapper for sticky behavior of the entire header block */
+.stickyHeaderWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* Scrolls naturally relative to list */
+    /* z-index removed to blend with sibling video below it */
+}
+
+/* Part 1: Top Label (Solid Background, Normal Text) */
+.labelSection {
+    width: 100%;
+    background-color: #EFEDE7;
+    /* Solid Beige */
+    padding: 4rem 2rem 1rem 2rem;
+    /* Top padding here */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    /* Keep label on top without blending */
+}
+
+/* Part 2: Big Title (Knockout Effect) */
+.titleSection {
+    width: 100%;
+    background-color: #EFEDE7;
+    /* Beige background that blends */
+    padding: 0 2rem 4rem 2rem;
+    /* Bottom padding here */
+    display: flex;
+    justify-content: center;
+
+    /* Knockout Logic: 
+       Lighten Mode: Keeps the lightest color between Layer and Backdrop.
+       Beige (Light) vs Video (Darker) -> Beige (Opaque).
+       Black Text (Darkest) vs Video -> Video (Visible).
+    */
+    mix-blend-mode: lighten;
+}
+
+
+/* Ensure text colors are BLACK for the knockout effect */
+.topLabel {
+    font-size: 0.875rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #484E47;
+    /* Normal dark text, NOT knockout */
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.titleWrapper {
+    width: 100%;
+    max-width: 1000px;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 1rem 0;
+}
+
+.bigTitle {
+    font-family: 'Righteous', sans-serif;
+    font-size: clamp(2rem, 6vw, 5rem);
+    color: #000000;
+    line-height: 1.1;
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.line1,
+.line2,
+.line3,
+.line4 {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.line1 {
+    border-bottom: 1px solid #000000;
+}
+
+.line2 {
+    text-align: right;
+    border-bottom: 1px solid #000000;
+}
+
+.line3 {
+    text-align: left;
+    border-bottom: 1px solid #000000;
+}
+
+.line4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ================= LIST SECTION ================= */
+.listContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    /* 
+       On desktop, we want to see the video behind the list (partially).
+       So we use a semi-transparent dark background.
+    */
+    background-color: rgba(26, 26, 26, 0.85);
+    padding: 4rem 2rem;
+    color: #FFFFFF;
+
+    /* Relative positioning ensures it follows the header naturally */
+    position: relative;
+    z-index: 2;
+    /* Keep list above everything */
+}
+
+.serviceItem {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.serviceItem:last-child {
+    border-bottom: none;
+}
+
+.serviceMeta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.serviceNumber {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.serviceTitle {
+    font-family: 'Righteous', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.serviceDescription {
+    width: 100%;
+    max-width: 500px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    flex: 1;
+    text-align: left;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .labelSection {
+        padding: 2rem 1.5rem 0.5rem 1.5rem;
+    }
+
+    .titleSection {
+        padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    .bigTitle {
+        font-size: 2rem;
+    }
+
+    .line2 {
+        text-align: right;
+    }
+
+    .listContainer {
+        /* Mobile List: Solid Beige Background, Dark Text */
+        background-color: #EFEDE7;
+        color: #1A1A1A;
+        padding: 2rem 1.5rem;
+        backdrop-filter: none;
+    }
+
+    .serviceItem {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3rem 0;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+    }
+
+    .serviceMeta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .serviceNumber {
+        font-size: 1.25rem;
+        color: #1A1A1A;
+        opacity: 0.6;
+    }
+
+    .serviceTitle {
+        font-size: 1.75rem;
+        color: #1A1A1A;
+    }
+
+    .serviceDescription {
+        color: #484E47;
+    }
+}

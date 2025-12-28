@@ -1,0 +1,168 @@
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 2rem;
+    gap: 3.375rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../../assets/banner-aura.svg");
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 16 / 9;
+}
+
+.heroTitle {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1920 / 400;
+    /* Approximate based on usual hero titles */
+}
+
+.heroTitleMobile {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.heroTextLine {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 400 / 150;
+    /* Approximate for mobile letreiro */
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    gap: 2rem;
+}
+
+.contentBlock {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.125rem;
+}
+
+.subtitle {
+    font-size: 1.18rem;
+    font-weight: 300;
+    color: white;
+    white-space: pre-line;
+}
+
+.ctaButtonContainer {
+    width: min-content;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.ctaButtonContainer:hover {
+    transform: translateY(-1rem);
+}
+
+.ctaButton {
+    width: 14.8125rem;
+    height: 3.625rem;
+    padding: 0.625rem;
+    background: linear-gradient(270deg, #ffffff, #e5e5d8, #e5e5d880);
+    border: none;
+    border-radius: 3.125rem;
+    font-size: 1.18rem;
+    font-weight: 400;
+    color: #283221;
+    cursor: pointer;
+}
+
+.ctaIcon {
+    width: max-content;
+    height: max-content;
+    object-fit: contain;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+    .hero {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        padding: 0 1.5rem;
+        gap: 2rem;
+    }
+
+    .heroTitle {
+        width: 100%;
+    }
+
+    .contentBlock {
+        gap: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .ctaButton {
+        width: 12rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        padding: 0 1.25rem;
+        gap: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url("../../assets/banner-aura-mobile.svg");
+    }
+
+    .heroTitle {
+        display: none;
+    }
+
+    .heroTitleMobile {
+        display: flex;
+        width: 100%;
+    }
+
+    .textContent {
+        align-items: flex-start;
+    }
+
+    .contentBlock {
+        gap: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .ctaButtonContainer:hover {
+        transform: translateX(-1rem);
+        transform-origin: left;
+    }
+
+    .ctaButton {
+        width: 11rem;
+        height: 2.75rem;
+        font-size: 0.9rem;
+    }
+}

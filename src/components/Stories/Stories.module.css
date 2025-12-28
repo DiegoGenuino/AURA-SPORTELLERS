@@ -1,0 +1,417 @@
+/* ==================== STORIES SECTION ==================== */
+
+.storiesSection {
+    width: 100%;
+    height: 3500px;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    background-color: #efede7;
+    /* Linhas verticais no background */
+    background-image: linear-gradient(to right,
+            rgba(200, 200, 195, 0.5) 1px,
+            transparent 1px);
+    background-size: calc(100% / 5) 100%;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.storiesHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.storiesKicker {
+    font-size: 1.2rem;
+    letter-spacing: 0.625rem;
+    text-transform: uppercase;
+    color: #484e47;
+    font-weight: 300;
+}
+
+/* Marquee de fundo - atrás do texto */
+.marqueeWrapper {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.marqueeRow {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marqueeTrack {
+    display: flex;
+    gap: 2rem;
+    white-space: nowrap;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 800;
+    color: rgba(40, 50, 33, 0.06);
+    animation: marquee 12s linear infinite;
+    text-transform: uppercase;
+    line-height: 1;
+    width: max-content;
+}
+
+.marqueeTrack span {
+    flex-shrink: 0;
+    letter-spacing: 1.5rem;
+    font-size: 10rem;
+}
+
+.marqueeReverse {
+    animation: marqueeReverse 12s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-25%);
+    }
+}
+
+@keyframes marqueeReverse {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Wrapper sticky - camiseta e texto ficam fixos enquanto cards passam */
+.stickyWrapper {
+    position: sticky;
+    top: 5vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+}
+
+/* Jersey showcase */
+.jerseyShowcase {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 2rem;
+}
+
+.jerseyContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jerseyImage {
+    width: clamp(280px, 40vw, 500px);
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 1 / 1.2;
+    /* Approximate for a jersey */
+}
+
+.iconAuraStories {
+    position: absolute;
+    top: 14rem;
+}
+
+/* Conteúdo de texto - sticky para cards passarem por cima */
+.storiesContent {
+    position: sticky;
+    top: 15vh;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    padding-top: 1rem;
+}
+
+.storiesTitle {
+    font-family: "Righteous";
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    color: #283221;
+    line-height: 1.1;
+    margin: 0 0 2.5rem 0;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(top, #2f3527, #484e47);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.storiesDescription {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #474b42;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Cards de mídia */
+.cardsContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.mediaCard {
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    background: #1a1a1a;
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.15s ease-out;
+    will-change: transform, opacity;
+}
+
+.mediaCard.visible {
+    opacity: 1;
+}
+
+.mediaCard img,
+.mediaCard video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Posições dos cards - começam bem abaixo do texto para dar tempo de ler */
+.card1 {
+    top: 1400px;
+    left: 15%;
+    width: 10rem;
+    height: 18rem;
+    pointer-events: auto;
+}
+
+.card2 {
+    top: 1500px;
+    right: 25%;
+    width: 18rem;
+    height: 24rem;
+    pointer-events: auto;
+}
+
+.card3 {
+    top: 1750px;
+    left: 77%;
+    width: 14rem;
+    height: 24rem;
+    pointer-events: auto;
+}
+
+.card4 {
+    top: 1800px;
+    right: 60%;
+    width: 14rem;
+    height: 24rem;
+    pointer-events: auto;
+}
+
+.card5 {
+    top: 2000px;
+    left: -1%;
+    width: 17rem;
+    height: 30rem;
+    pointer-events: auto;
+}
+
+.card6 {
+    top: 2150px;
+    left: 95%;
+    width: 9rem;
+    height: 16rem;
+    pointer-events: auto;
+}
+
+.card7 {
+    top: 2050px;
+    right: 33%;
+    width: 16rem;
+    height: 17rem;
+    pointer-events: auto;
+}
+
+.card8 {
+    top: 2300px;
+    left: 28%;
+    width: 15rem;
+    height: 24rem;
+    pointer-events: auto;
+}
+
+/* ==================== RESPONSIVO ==================== */
+
+@media (max-width: 1024px) {
+    .storiesSection {
+        padding: 4rem 1.5rem 6rem;
+    }
+
+    .storiesTitle {
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 768px) {
+    .storiesSection {
+        height: 4000px;
+        padding: 2rem 1rem;
+        background-size: calc(100% / 4) 100%;
+    }
+
+    .marqueeWrapper {
+        top: 2rem;
+    }
+
+    .marqueeTrack span {
+        letter-spacing: 1rem;
+        font-size: 7rem;
+    }
+
+    .jerseyShowcase {
+        padding: 1rem 0;
+    }
+
+    .jerseyImage {
+        width: clamp(180px, 50vw, 280px);
+    }
+
+    .iconAuraStories {
+        top: 10rem;
+        width: 20rem;
+    }
+
+    .storiesContent {
+        top: 10vh;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .storiesKicker {
+        font-size: 0.75rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .storiesTitle {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .storiesDescription {
+        font-size: 0.85rem;
+        padding: 0 1.5rem;
+        line-height: 1.5;
+    }
+
+    /* Garantir que o container seja absoluto para o sistema de top funcionar */
+    .cardsContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        transform: none;
+        overflow: hidden;
+    }
+
+    .mediaCard {
+        position: absolute;
+        opacity: 0;
+    }
+
+    /* Cards Mobile */
+    .card1 {
+        top: 950px !important;
+        left: 5% !important;
+        width: 45% !important;
+        height: 18rem !important;
+    }
+
+    .card2 {
+        top: 1150px !important;
+        right: 5% !important;
+        left: auto !important;
+        width: 55% !important;
+        height: 15rem !important;
+    }
+
+    .card3 {
+        top: 1400px !important;
+        left: 10% !important;
+        width: 40% !important;
+        height: 12rem !important;
+    }
+
+    .card4 {
+        top: 1550px !important;
+        right: 10% !important;
+        left: auto !important;
+        width: 50% !important;
+        height: 22rem !important;
+    }
+
+    .card5 {
+        top: 1900px !important;
+        left: -5% !important;
+        width: 45% !important;
+        height: 16rem !important;
+    }
+
+    .card6 {
+        top: 2100px !important;
+        right: -5% !important;
+        left: auto !important;
+        width: 60% !important;
+        height: 18rem !important;
+    }
+
+    .card7 {
+        top: 2450px !important;
+        left: 15% !important;
+        width: 50% !important;
+        height: 20rem !important;
+    }
+
+    .card8 {
+        top: 2750px !important;
+        right: 5% !important;
+        left: auto !important;
+        width: 45% !important;
+        height: 15rem !important;
+    }
+}
