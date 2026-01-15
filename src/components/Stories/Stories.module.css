@@ -192,6 +192,7 @@
     background: #1a1a1a;
     opacity: 0;
     transform: translateY(60px) scale(0.95);
+    transition: all 0.1s ease;
 }
 
 .mediaCard.visible {
