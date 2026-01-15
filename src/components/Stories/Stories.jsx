@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import styles from "./Stories.module.css";
-import camisetaAura from "../../assets/camiseta-aura.png";
-import IconAuraStories from "../../assets/stories-icon.svg";
+// import camisetaAura from "../../assets/camiseta-aura.png";
+// import IconAuraStories from "../../assets/stories-icon.svg";
 
 // Media imports
 import cardImg1 from "../../assets/videosandphotos/photoUm.webp";
@@ -74,7 +74,9 @@ const Stories = () => {
 
     return (
         <section className={styles.storiesSection}>
-            {/* Marquee de fundo */}
+
+            {/* <div className="jersey-section">
+            Marquee de fundo
             <div className={styles.marqueeWrapper} aria-hidden="true">
                 <div className={styles.marqueeRow}>
                     <div className={styles.marqueeTrack}>
@@ -94,7 +96,7 @@ const Stories = () => {
                 </div>
             </div>
 
-            {/* Camiseta showcase */}
+            Camiseta showcase
             <div className={styles.jerseyShowcase}>
                 <div className={styles.jerseyContainer}>
                     <img
@@ -109,6 +111,7 @@ const Stories = () => {
                     />
                 </div>
             </div>
+            </div> */}
 
             {/* Conteúdo de texto - sticky */}
             <div className={styles.storiesContent}>

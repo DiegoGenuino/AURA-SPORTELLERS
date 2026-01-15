@@ -4,6 +4,7 @@ import Hero from "../components/Hero/Hero";
 import Stories from "../components/Stories/Stories";
 import About from "../components/About/About";
 import Team from "../components/Team/Team";
+import Jersey from "../components/Jersey/Jersey";
 import Services from "../components/Services/Services";
 import Atletas from "../components/Atletas/Atletas";
 import ContactFooter from "../components/ContactFooter/ContactFooter";
@@ -14,10 +15,11 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Stories />
-      <About />
-      <Team />
+      {/* <Team /> */}
       <Services />
       <Atletas />
+      <About />
+      <Jersey />
       <ContactFooter />
     </main>
   );

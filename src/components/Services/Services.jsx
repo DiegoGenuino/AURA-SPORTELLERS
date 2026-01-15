@@ -42,7 +42,7 @@ const Services = () => {
                 <video src={bgVideo} autoPlay muted loop playsInline className={styles.bgVideo} />
             </div>
 
-            {/* Header Container - Split for Selective Knockout */}
+           
             <div className={styles.stickyHeaderWrapper}>
                 <div className={styles.labelSection}>
                     <div className={styles.topLabel}>NOSSOS SERVIÇOS</div>
@@ -50,7 +50,7 @@ const Services = () => {
 
                 <div className={styles.titleSection}>
                     <div className={styles.titleWrapper}>
-                        {/* Mobile layout might need different structure, handling via CSS */}
+               
                         <h2 className={styles.bigTitle}>
                             <div className={styles.line1}>CONECTAMOS</div>
                             <div className={styles.line2}>ATLETAS E MARCAS</div>
@@ -64,7 +64,7 @@ const Services = () => {
                 </div>
             </div>
 
-            {/* Services List */}
+      
             <div className={styles.listContainer}>
                 {servicesList.map((service, index) => (
                     <div key={index} className={styles.serviceItem}>

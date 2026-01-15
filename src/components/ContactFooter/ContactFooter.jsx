@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ContactFooter.module.css';
 
 // Assets
-import atletaBackground from '../../assets/finalSection/atleta-background.png';
+// import atletaBackground from '../../assets/finalSection/atleta-background.png';
 import letreiroAura from '../../assets/finalSection/letreiro-aura.svg';
 import auraIcon from '../../assets/finalSection/aura-icon.svg';
 import sisuLogo from '../../assets/finalSection/sisu-logo.svg';
@@ -12,7 +12,7 @@ const ContactFooter = () => {
         <footer className={styles.footerSection} id="contact">
             {/* Top Image Section */}
             <div className={styles.imageContainer}>
-                <img src={atletaBackground} alt="Athlete" className={styles.heroImage} />
+                {/* <img src={atletaBackground} alt="Athlete" className={styles.heroImage} /> */}
                 <div className={styles.overlayWrapper}>
                     <img src={letreiroAura} alt="AURA SPORTELLERS" className={styles.overlayText} />
                 </div>

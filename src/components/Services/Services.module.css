@@ -1,12 +1,9 @@
 .servicesSection {
     width: 100%;
-
     position: relative;
-    /* Removed background-color to rely on video/header layering */
     display: flex;
     flex-direction: column;
     isolation: isolate;
-    /* Creates a new stacking context */
 }
 
 /* ================= BACKGROUND VIDEO ================= */
@@ -16,10 +13,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* Covers the entire section height */
-    /* z-index removed to rely on DOM order (Level 0/auto) */
     pointer-events: none;
-    /* overflow: hidden; REMOVED per user request to fix bug */
 }
 
 .bgVideo {
@@ -34,18 +28,14 @@
 
 /* ================= HEADER SECTION ================= */
 
-/* Wrapper for sticky behavior of the entire header block */
 .stickyHeaderWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    /* Scrolls naturally relative to list */
-    /* z-index removed to blend with sibling video below it */
 }
 
-/* Part 1: Top Label (Solid Background, Normal Text) */
 .labelSection {
     width: 100%;
     background-color: #EFEDE7;
@@ -56,35 +46,22 @@
     justify-content: center;
     position: relative;
     z-index: 2;
-    /* Keep label on top without blending */
 }
 
-/* Part 2: Big Title (Knockout Effect) */
 .titleSection {
     width: 100%;
     background-color: #EFEDE7;
-    /* Beige background that blends */
     padding: 0 2rem 4rem 2rem;
-    /* Bottom padding here */
     display: flex;
     justify-content: center;
-
-    /* Knockout Logic: 
-       Lighten Mode: Keeps the lightest color between Layer and Backdrop.
-       Beige (Light) vs Video (Darker) -> Beige (Opaque).
-       Black Text (Darkest) vs Video -> Video (Visible).
-    */
     mix-blend-mode: lighten;
 }
 
-
-/* Ensure text colors are BLACK for the knockout effect */
 .topLabel {
     font-size: 0.875rem;
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: #484E47;
-    /* Normal dark text, NOT knockout */
     margin-bottom: 2rem;
     font-weight: 300;
 }
@@ -143,19 +120,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-
-    /* 
-       On desktop, we want to see the video behind the list (partially).
-       So we use a semi-transparent dark background.
-    */
     background-color: rgba(26, 26, 26, 0.85);
     padding: 4rem 2rem;
     color: #FFFFFF;
-
-    /* Relative positioning ensures it follows the header naturally */
     position: relative;
     z-index: 2;
-    /* Keep list above everything */
 }
 
 .serviceItem {
@@ -166,7 +135,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-center;
     gap: 2rem;
     transition: background-color 0.3s ease;
 }
@@ -229,7 +198,6 @@
     }
 
     .listContainer {
-        /* Mobile List: Solid Beige Background, Dark Text */
         background-color: #EFEDE7;
         color: #1A1A1A;
         padding: 2rem 1.5rem;
