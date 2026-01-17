@@ -29,7 +29,7 @@ const Stories = () => {
     mediaItems.reduce((acc, _, index) => {
       acc[index] = true;
       return acc;
-    }, {})
+    }, {}),
   );
   const [parallaxOffsets, setParallaxOffsets] = useState({});
   const cardsRef = useRef(null);
@@ -66,44 +66,6 @@ const Stories = () => {
 
   return (
     <section className={styles.storiesSection}>
-      {/* <div className="jersey-section">
-            Marquee de fundo
-            <div className={styles.marqueeWrapper} aria-hidden="true">
-                <div className={styles.marqueeRow}>
-                    <div className={styles.marqueeTrack}>
-                        <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
-                        <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
-                        <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
-                        <span>/ ISSO É AURA / ISSO É AURA / ISSO É AURA /</span>
-                    </div>
-                </div>
-                <div className={styles.marqueeRow}>
-                    <div className={`${styles.marqueeTrack} ${styles.marqueeReverse}`}>
-                        <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
-                        <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
-                        <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
-                        <span>THE ORIGINAL SPORTELLERS / THE ORIGINAL SPORTELLERS</span>
-                    </div>
-                </div>
-            </div>
-
-            Camiseta showcase
-            <div className={styles.jerseyShowcase}>
-                <div className={styles.jerseyContainer}>
-                    <img
-                        src={camisetaAura}
-                        alt="Camiseta Aura"
-                        className={styles.jerseyImage}
-                    />
-                    <img
-                        src={IconAuraStories}
-                        alt="Icon Aura"
-                        className={styles.iconAuraStories}
-                    />
-                </div>
-            </div>
-            </div> */}
-
       {/* Conteúdo de texto - sticky */}
       <div className={styles.storiesContent}>
         {/* Header */}
@@ -112,17 +74,17 @@ const Stories = () => {
         </div>
 
         <h2 className={styles.storiesTitle}>
-          SEM EXCESSOS.
-          <br />
-          SEM MOLDES.
-          <br />
-          SÓ AUTENTICIDADE
-          <br />E CONEXÃO.
+          CONEXÕES COM ESTRATÉGIA.
+          NARRATIVAS COM PROPÓSITO.
+       
+          PARCERIAS COM VISÃO DE
+         
+          LONGO PRAZO.
         </h2>
         <p className={styles.storiesDescription}>
-          AURA é a presença que o atleta projeta no mundo — sua energia, sua
-          memória, seu impacto. Uma categoria que criamos para narrar o atleta
-          como ele realmente é.
+          A AURA é uma agência de gestão estratégica de imagem e endorsement
+          esportivo. Conectamos atletas e marcas a partir de narrativa e
+          posicionamento.
         </p>
       </div>
 

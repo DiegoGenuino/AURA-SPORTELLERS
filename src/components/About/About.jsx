@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./About.module.css";
 import responsive from "./About.responsive.module.css";
 import aboutImage from "../../assets/videosandphotos/about-image.svg";
-import sisuLogo from "../../assets/logos/sisu-logo.svg";
+import sisuLogo from "../../assets/logos/sisu-logo.png";
 import goldenGoalLogo from "../../assets/logos/goldengoal-logo.svg";
 import fengLogo from "../../assets/logos/feng-logo.svg";
 import sportInsiderLogo from "../../assets/logos/sportinsider-logo.svg";
 import tinmoLogo from "../../assets/logos/tinmo-logo.svg";
+import quartamLogo from "../../assets/logos/quartam-logo.png";
 
 const About = () => {
     const [parallaxY, setParallaxY] = useState(0);
@@ -84,6 +85,7 @@ const About = () => {
                     <img src={fengLogo} alt="Feng" />
                     <img src={sportInsiderLogo} alt="Sport Insider" />
                     <img src={tinmoLogo} alt="Tinmo" />
+                    <img src={quartamLogo} alt="Quartam" />
                 </div>
             </div>
         </section>

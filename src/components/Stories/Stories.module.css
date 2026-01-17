@@ -152,7 +152,7 @@
 
 .storiesTitle {
     font-family: "Righteous";
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3rem, 8vw, 4rem);
     font-weight: 400;
     color: #283221;
     line-height: 1.1;
@@ -166,7 +166,7 @@
 
 .storiesDescription {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 300;
     color: #474b42;
     line-height: 1.6;
     max-width: 600px;

@@ -1,93 +1,100 @@
 @media (max-width: 768px) {
-    .aboutSection {
-        padding: 0 2rem;
-        height: auto;
-        min-height: 100vh;
-        align-items: center;
-        background-position: center;
-    }
+  .aboutSection {
+    padding: 0 2rem;
+    height: auto;
+    min-height: 100vh;
+    align-items: center;
+    background-position: center;
+  }
 
-    .aboutContent {
-        gap: 1.5rem;
-        padding: 5rem 0 2rem;
-        justify-content: flex-start;
-        align-items: center;
-        text-align: center;
-    }
+  .aboutContent {
+    gap: 1.5rem;
+    padding: 5rem 0 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
 
-    .aboutText {
-        flex-direction: column;
-        gap: 1.5rem;
-        order: 2;
-        align-items: center;
-    }
+  .aboutText {
+    flex-direction: column;
+    gap: 1.5rem;
+    order: 2;
+    align-items: center;
+  }
 
-    .aboutTitle {
-        align-items: center;
-    }
+  .aboutTitle {
+    align-items: center;
+  }
 
-    .aboutTitleText {
-        font-size: 2.2rem;
-        line-height: 1.1;
-    }
+  .aboutTitleText {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
 
-    .aboutDescription {
-        width: 100%;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin: 0;
-    }
+  .aboutDescription {
+    width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
 
-    .aboutImageParallax {
-        order: 1;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
+  .aboutImageParallax {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 
-    .aboutImage {
-        width: 110% !important;
-        /* Slightly larger to fill width */
-        max-width: none;
-        position: relative;
-        top: auto;
-        right: -5rem;
-        transform: none !important;
-        margin: 0;
-        z-index: 1;
-        mask-image: none;
-        -webkit-mask-image: none;
-    }
+  .aboutImage {
+    width: 110% !important;
+    max-width: none;
+    position: relative;
+    top: auto;
+    right: -5rem;
+    transform: none !important;
+    margin: 0;
+    z-index: 1;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 
-    .aboutLogos {
-        order: 3;
-        height: auto;
-        padding-top: 1.5rem;
-        justify-content: center;
-        gap: 1.5rem;
-        border-top: solid 1px rgba(255, 255, 255, 0.1);
-    }
+  .aboutLogos {
+    order: 3;
+    height: auto;
+    padding-top: 1.5rem;
+    justify-content: center;
+    gap: 2rem;
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+  }
 
-    .aboutLogos img {
-        width: 4rem;
-        height: 2rem;
-    }
+  .aboutLogos img {
+    width: auto;
+    height: 2rem;
+    max-width: 5rem;
+    object-fit: contain;
+  }
 }
 
 /* Mobile pequeno específico */
 @media (max-width: 480px) {
-    .aboutTitleText {
-        font-size: 2rem;
-        line-height: 2.5rem;
-    }
+  .aboutTitleText {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 
-    .aboutKicker {
-        font-size: 1rem;
-        letter-spacing: 0.3rem;
-    }
+  .aboutKicker {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+  }
 
-    .aboutLogos img {
-        width: 4rem;
-    }
+  .aboutLogos {
+    gap: 1.5rem;
+  }
+
+  .aboutLogos img {
+    height: 1.8rem;
+    max-width: 4.5rem;
+  }
 }

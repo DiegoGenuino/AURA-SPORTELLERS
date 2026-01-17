@@ -19,7 +19,7 @@ const Home = () => {
       <Services />
       <Atletas />
       <About />
-      <Jersey />
+      {/* <Jersey /> */}
       <ContactFooter />
     </main>
   );

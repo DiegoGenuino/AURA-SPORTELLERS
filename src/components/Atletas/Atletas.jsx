@@ -6,7 +6,7 @@ import logoAtletas from "../../assets/atletasSection/aura-logo-atletas-section.s
 import iconBackground from "../../assets/atletasSection/aura-icon-background-card.svg";
 import johnKennedyImg from "../../assets/atletasSection/john-kennedy-foto.png";
 import brendaMouraImg from "../../assets/atletasSection/brenda-moura-foto.png";
-import agustinCanobbioImg from "../../assets/atletasSection/Agustin Canobbio-foto.png";
+import agustinCanobbioImg from "../../assets/atletasSection/agustin-canobbio-foto.png";
 import felipeAndradeImg from "../../assets/atletasSection/felipe-andrade-foto.png";
 
 const athletesData = [

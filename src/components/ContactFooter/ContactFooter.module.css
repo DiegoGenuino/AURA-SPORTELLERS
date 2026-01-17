@@ -1,223 +1,465 @@
-.footerSection {
+/* ==================== FOOTER SECTION ==================== */
+.footer {
   width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: #000000;
   z-index: 50;
 }
 
-/* ================= IMAGE SECTION ================= */
-.imageContainer {
+/* ==================== HERO SECTION (LETREIRO) ==================== */
+.heroSection {
   width: 100%;
-  height: 20rem;
-  /* Prominent height */
+  height: 35vh;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
   position: relative;
   overflow: hidden;
 }
 
-.heroImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  aspect-ratio: 16 / 9;
-}
-
-.overlayWrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  /* Gradient fade to black at bottom to blend with footer */
-background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 1) 15%,
-    rgba(0, 0, 0, 0)
-  );
-  padding-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 50%;
-}
-
-.overlayText {
-  width: 90%;
+.heroLetreiro {
+  width: 85%;
+  max-width: 1200px;
   height: auto;
   object-fit: contain;
-  opacity: 0.9;
-  aspect-ratio: 1000 / 200;
-  /* Approximate for letreiro */
+  filter: drop-shadow(0 4px 6px rgb(255, 255, 255))
+    drop-shadow(0 12px 25px rgba(0, 0, 0, 0.25));
+
+  animation:
+    brokenFlicker 3s ease infinite;
 }
 
-/* ================= CONTENT SECTION ================= */
-.contentContainer {
+/* Animação de letreiro quebrado piscando */
+@keyframes brokenFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  /* Primeira falha rápida */
+  2% {
+    opacity: 0.4;
+  }
+
+  3% {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.3;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  /* Período estável */
+  6%,
+  35% {
+    opacity: 1;
+  }
+
+  /* Segunda falha mais intensa */
+  36% {
+    opacity: 0.2;
+  }
+
+  37% {
+    opacity: 0.8;
+  }
+
+  38% {
+    opacity: 0.1;
+  }
+
+  39% {
+    opacity: 0.9;
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  41% {
+    opacity: 1;
+  }
+
+  /* Período estável longo */
+  42%,
+  78% {
+    opacity: 1;
+  }
+
+  /* Falha tripla rápida */
+  79% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  81% {
+    opacity: 0.3;
+  }
+
+  82% {
+    opacity: 0.9;
+  }
+
+  83% {
+    opacity: 0.2;
+  }
+
+  84% {
+    opacity: 1;
+  }
+
+  /* Estável até o fim */
+  85%,
+  99% {
+    opacity: 1;
+  }
+}
+
+/* ==================== MAIN FOOTER ==================== */
+.footerMain {
   width: 100%;
   background-color: #000000;
-  color: #ffffff;
-  padding: 4rem 4rem 2rem;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 5rem 0 2.5rem;
 }
 
-/* Background Wireframe Logo */
-.bgLogoContainer {
+/* Background Decoration (Arcos) */
+.bgDecoration {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
-  /* Subtle background */
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.04;
 }
 
-.bgLogo {
+.bgIcon {
   width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
-/* Main Content Row */
-.mainContent {
+/* ==================== FOOTER CONTAINER ==================== */
+.footerContainer {
   position: relative;
   z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ==================== FOOTER CONTENT ==================== */
+.footerContent {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  flex-grow: 1;
-  /* Push bottom bar down */
+  gap: 4rem;
 }
 
-/* Left Column */
-.leftCol {
+/* Contact Section */
+.contactSection {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .contactTitle {
   font-family: "Righteous", sans-serif;
-  font-size: 2rem;
-  font-weight: 100;
+  font-size: 2.75rem;
+  font-weight: 400;
   color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
-.contactLinks {
+.contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .contactLink {
   font-family: "Outfit", sans-serif;
-  font-size: 1.1rem;
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  font-size: 1.3rem;
   font-weight: 300;
-  transition: opacity 0.2s ease;
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contactLink::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.4) 100%);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contactLink:hover {
-  opacity: 0.7;
+  transform: translateX(6px);
+  color: #ffffff;
 }
 
-/* Right Column */
-.rightCol {
+.contactLink:hover::after {
+  width: 100%;
+}
+
+/* Social Section */
+.socialSection {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  text-align: right;
-  margin-top: 4rem;
-  /* Align vaguely with links visually */
+  gap: 1.75rem;
+  align-items: flex-end;
+  margin-top: 5rem;
 }
 
 .socialLink {
   font-family: "Outfit", sans-serif;
-  font-size: 1rem;
-  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.2s ease;
+  letter-spacing: 0.1em;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.socialLink::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socialLink:hover {
-  color: #cccccc;
+  color: #ffffff;
+  letter-spacing: 0.14em;
+  transform: translateX(-6px);
 }
 
-/* Bottom Bar */
-.bottomBar {
-  position: relative;
-  z-index: 2;
+.socialLink:hover::before {
+  width: 30px;
+  right: -40px;
+}
+
+/* ==================== FOOTER BOTTOM ==================== */
+.footerBottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
-  margin: 4rem auto 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-family: "Outfit", sans-serif;
-  font-size: 0.75rem;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.sisuLogo {
-  height: 1.5rem;
-  width: auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 2rem;
 }
 
 .copyright,
 .brandName {
-  opacity: 0.8;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
-/* ================= RESPONSIVE ================= */
+.copyright:hover,
+.brandName:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.sisuLogo {
+  height: 2rem;
+  width: auto;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.sisuLogo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .footerContainer {
+    padding: 0 4rem;
+  }
+
+  .contactTitle {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-  .imageContainer {
-    height: 60vh;
+  .heroSection {
+    height: 30vh;
+    min-height: 200px;
+    padding: 2rem 1.5rem;
   }
 
-  .contentContainer {
-    padding: 4rem 1.5rem 2rem;
-    min-height: auto;
+  .heroLetreiro {
+    width: 90%;
   }
 
-  .bgLogoContainer {
-    width: 100%;
-    top: 60%;
+  .footerMain {
+    padding: 4rem 0 2rem;
   }
 
-  .mainContent {
+  .footerContainer {
+    padding: 0 2.5rem;
+    gap: 3rem;
+  }
+
+  .bgDecoration {
+    max-width: 600px;
+    opacity: 0.03;
+  }
+
+  .footerContent {
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
   }
 
-  .rightCol {
-    text-align: left;
+  .contactSection {
+    gap: 2rem;
+  }
+
+  .contactTitle {
+    font-size: 2.2rem;
+  }
+
+  .contactInfo {
+    gap: 1rem;
+  }
+
+  .contactLink {
+    font-size: 1.15rem;
+  }
+
+  .socialSection {
     margin-top: 0;
+    align-items: flex-start;
     gap: 1.5rem;
   }
 
-  .bottomBar {
+  .socialLink {
+    font-size: 1.05rem;
+  }
+
+  .socialLink:hover {
+    transform: translateX(6px);
+  }
+
+  .socialLink:hover::before {
+    width: 25px;
+    right: auto;
+    left: -35px;
+  }
+
+  .footerBottom {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.75rem;
+    padding-top: 3rem;
     text-align: center;
-    border-top: none;
-    /* Often cleaner on mobile */
   }
 
   .sisuLogo {
-    height: 1.8rem;
-    margin: 1rem 0;
+    height: 2.2rem;
+    order: -1;
+  }
+
+  .copyright {
+    order: 1;
+  }
+
+  .brandName {
+    order: 2;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .heroSection {
+    min-height: 180px;
+  }
+
+  .heroLetreiro {
+    width: 95%;
+  }
+
+  .footerMain {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footerContainer {
+    padding: 0 1.75rem;
+    gap: 2.5rem;
+  }
+
+  .contactTitle {
+    font-size: 1.9rem;
+  }
+
+  .contactLink {
+    font-size: 1.05rem;
+  }
+
+  .socialLink {
+    font-size: 0.95rem;
+  }
+
+  .footerBottom {
+    padding-top: 2.5rem;
+    font-size: 0.75rem;
+    gap: 1.5rem;
+  }
+
+  .sisuLogo {
+    height: 1.9rem;
   }
 }
