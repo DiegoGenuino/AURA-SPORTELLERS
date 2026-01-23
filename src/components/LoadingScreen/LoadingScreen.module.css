@@ -139,7 +139,7 @@
   width: 34px;
   height: auto;
   flex-shrink: 0;
-  margin-left: 8px;
+  margin-left: -2px;
 }
 
 /* Letras U, R, A2 - aparecem em sequência */
