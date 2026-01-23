@@ -4,7 +4,7 @@ import styles from "./ContactFooter.module.css";
 // Assets
 import letreiroAura from "../../assets/finalSection/letreiro-aura.svg";
 import auraIcon from "../../assets/finalSection/aura-icon.svg";
-import sisuLogo from "../../assets/finalSection/sisu-logo.svg";
+import sisuLogo from "../../assets/finalSection/sisu-logo.png";
 
 const ContactFooter = () => {
   return (
