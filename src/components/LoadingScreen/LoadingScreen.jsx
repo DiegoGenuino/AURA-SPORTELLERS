@@ -50,7 +50,7 @@ export default function LoadingScreen() {
         {/* Logo container */}
         <div className={`${styles.logoContainer} ${animationStarted ? styles.shifted : ''}`}>
           {/* Ícone dos raios */}
-          <svg className={styles.logoIcon} viewBox="0 0 33 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className={styles.logoIcon} viewBox="0 0 33 52" fill="none" xmlns="http://www.w3.org/2000/svg" style={{transform: 'scaleX(-1)'}}>
             <path d="M21.4286 10.192C20.97 9.6259 21.3423 8.61898 21.9612 8.75174C28.2215 10.1018 33 17.3031 33 25.9821C33 34.6612 28.3498 41.6646 22.2152 43.1524C21.584 43.3052 21.1969 42.2732 21.6752 41.7071C26.4241 36.1014 26.4241 26.0122 26.4241 26.0122C26.4241 26.0122 26.4241 16.3487 21.4311 10.192H21.4286Z" fill="white"/>
             <path d="M0.369505 2.18967C-0.45896 1.33554 0.211702 -0.182353 1.32865 0.0180296C12.6115 2.05442 21.2241 12.9101 21.2241 25.9951C21.2241 39.0801 12.8433 49.6427 1.78727 51.8845C0.650591 52.115 -0.0471916 50.557 0.813326 49.7054C9.3692 41.2542 9.3692 26.0402 9.3692 26.0402C9.3692 26.0402 9.36919 11.4699 0.369505 2.18717V2.18967Z" fill="white"/>
           </svg>

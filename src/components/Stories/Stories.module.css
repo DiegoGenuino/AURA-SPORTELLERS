@@ -162,6 +162,10 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: 
+        drop-shadow(0 0 8px #efede7be)
+        drop-shadow(0 0 12px #efede7)
+       
 }
 
 .storiesDescription {
@@ -171,6 +175,9 @@
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
+    filter: 
+     drop-shadow(0 0 8px #efede7)
+        drop-shadow(0 0 12px #efede7)
 }
 
 /* Cards de mídia */
