@@ -5,6 +5,7 @@
     min-height: 100vh;
     align-items: center;
     background-position: center;
+    position: relative;
   }
 
   .aboutContent {
@@ -18,8 +19,11 @@
   .aboutText {
     flex-direction: column;
     gap: 1.5rem;
-    order: 2;
+    order: 1;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem;
   }
 
   .aboutTitle {
@@ -39,39 +43,60 @@
   }
 
   .aboutImageParallax {
-    order: 1;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 350px;
     display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 0;
+    overflow: visible;
+    z-index: 0;
   }
 
   .aboutImage {
-    width: 110% !important;
+    width: 100%;
+    height: 100%;
     max-width: none;
     position: relative;
     top: auto;
-    right: -5rem;
+    right: auto;
     transform: none !important;
     margin: 0;
-    z-index: 1;
-    mask-image: none;
-    -webkit-mask-image: none;
+    object-fit: cover;
+    object-position: center;
+    mask-image: radial-gradient(ellipse at top right, black 40%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at top right, black 40%, transparent 70%);
+  }
+
+  .aboutLogosContainer {
+    order: 3;
+    margin-top: 2rem;
+  }
+
+  .sisuLogo {
+    padding-bottom: 1.5rem;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .sisuLogo img {
+    height: 1.8rem;
   }
 
   .aboutLogos {
-    order: 3;
     height: auto;
     padding-top: 1.5rem;
     justify-content: center;
     gap: 2rem;
-    border-top: solid 1px rgba(255, 255, 255, 0.1);
-    margin-top: 2rem;
+    border-top: none;
+    margin-top: 0;
   }
 
   .aboutLogos img {
     width: auto;
-    height: 2rem;
+    height: 1.6rem;
     max-width: 5rem;
     object-fit: contain;
   }
@@ -79,6 +104,16 @@
 
 /* Mobile pequeno específico */
 @media (max-width: 480px) {
+  .aboutImageParallax {
+    height: 300px;
+    width: 65%;
+  }
+
+  .aboutImage {
+    mask-image: radial-gradient(ellipse at top right, black 35%, transparent 65%);
+    -webkit-mask-image: radial-gradient(ellipse at top right, black 35%, transparent 65%);
+  }
+
   .aboutTitleText {
     font-size: 2rem;
     line-height: 2.5rem;
@@ -89,12 +124,16 @@
     letter-spacing: 0.3rem;
   }
 
+  .sisuLogo img {
+    height: 1.6rem;
+  }
+
   .aboutLogos {
     gap: 1.5rem;
   }
 
   .aboutLogos img {
-    height: 1.8rem;
+    height: 1.4rem;
     max-width: 4.5rem;
   }
 }

@@ -63,10 +63,7 @@ const About = () => {
                         </h2>
                     </div>
                     <p className={`${styles.aboutDescription} ${responsive.aboutDescription}`}>
-                        A AURA nasce dentro do Grupo SISU, uma holding especializada em
-                        posicionamento, branding, criatividade e negócios no esporte,
-                        formada por empresas que se complementam em profundidade
-                        estratégica e rigor estético.
+                       A Aura Sportellers faz parte do grupo SISU Ventures, plataforma de investimentos e desenvolvimento de negócios com atuação nos mercados de esporte, entretenimento e mídia. Com mais de 20 anos de experiência, a SISU combina visão estratégica, profundo conhecimento de mercado e uma rede de relacionamentos consolidada para identificar ativos com potencial de geração de valor e resultados sustentáveis.
                     </p>
                 </div>
                 <div className={`${styles.aboutImageParallax} ${responsive.aboutImageParallax}`}>
@@ -79,13 +76,17 @@ const About = () => {
                         decoding="async"
                     />
                 </div>
-                <div className={`${styles.aboutLogos} ${responsive.aboutLogos}`}>
-                    <img src={sisuLogo} alt="SISU" />
-                    <img src={goldenGoalLogo} alt="Golden Goal" />
-                    <img src={fengLogo} alt="Feng" />
-                    <img src={sportInsiderLogo} alt="Sport Insider" />
-                    <img src={tinmoLogo} alt="Tinmo" />
-                    <img src={quartamLogo} alt="Quartam" />
+                <div className={`${styles.aboutLogosContainer} ${responsive.aboutLogosContainer}`}>
+                    <div className={`${styles.sisuLogo} ${responsive.sisuLogo}`}>
+                        <img src={sisuLogo} alt="SISU Ventures" />
+                    </div>
+                    <div className={`${styles.aboutLogos} ${responsive.aboutLogos}`}>
+                        <img src={goldenGoalLogo} alt="Golden Goal" />
+                        <img src={fengLogo} alt="Feng" />
+                        <img src={sportInsiderLogo} alt="Sport Insider" />
+                        <img src={tinmoLogo} alt="Tinmo" />
+                        <img src={quartamLogo} alt="Quartam" />
+                    </div>
                 </div>
             </div>
         </section>
