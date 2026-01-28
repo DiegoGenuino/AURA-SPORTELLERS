@@ -144,9 +144,11 @@
   transform: translateY(-50%);
   object-fit: contain;
   z-index: -1;
-  /* Optional: circle mask if the svg doesn't have it */
-  mask-image: radial-gradient(circle, black 50%, transparent 70%);
-  -webkit-mask-image: radial-gradient(circle, black 50%, transparent 70%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at top right,
+    black 40%,
+    #ff000000 70%
+  );
 }
 
 /* Animations */
