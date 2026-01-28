@@ -115,7 +115,7 @@
   height: auto;
   display: flex;
   gap: 2rem;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding-top: 1.5rem;
