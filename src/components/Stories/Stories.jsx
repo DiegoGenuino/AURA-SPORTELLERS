@@ -10,6 +10,7 @@ import cardImg4 from "../../assets/videosandphotos/photoQuatro.webp";
 import cardImg5 from "../../assets/videosandphotos/photoCinco.jpg";
 import cardImg6 from "../../assets/videosandphotos/photoSeis.webp";
 import cardVideo2 from "../../assets/videosandphotos/videoDois.webm";
+import CardImg7 from "../../assets/videosandphotos/photoSete.webp";
 
 const Stories = () => {
   // Media items array com velocidades de parallax diferentes para cada card
@@ -17,10 +18,10 @@ const Stories = () => {
     { type: "image", src: cardImg1, alt: "photo1", speed: 0.15 },
     { type: "video", src: cardVideo1, alt: "video1", speed: 0.12 },
     { type: "image", src: cardImg2, alt: "photo2", speed: 0.18 },
-    { type: "image", src: cardImg3, alt: "photo3", speed: 0.26 },
+   
     { type: "image", src: cardImg4, alt: "photo4", speed: 0.2 },
-    { type: "video", src: cardVideo2, alt: "Vídeo 2", speed: 0.14 },
-    { type: "image", src: cardImg5, alt: "photo5", speed: 0.16 },
+    { type: "image", src: CardImg7, alt: "photo7", speed: 0.14 },
+
     { type: "image", src: cardImg6, alt: "photo6", speed: 0.13 },
   ];
 

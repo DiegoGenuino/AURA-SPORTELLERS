@@ -6,8 +6,8 @@ import logoAtletas from "../../assets/atletasSection/aura-logo-atletas-section.s
 import iconBackground from "../../assets/atletasSection/aura-icon-background-card.svg";
 import johnKennedyImg from "../../assets/atletasSection/john-kennedy-foto.png";
 import brendaMouraImg from "../../assets/atletasSection/brenda-moura-foto.png";
-import agustinCanobbioImg from "../../assets/atletasSection/agustin-canobbio-foto.png";
-import felipeAndradeImg from "../../assets/atletasSection/felipe-andrade-foto.png";
+import heitorLemiskaImg from "../../assets/atletasSection/heitor-lemiska.webp";
+import akillesLemiskaImg from "../../assets/atletasSection/akilles-lemiska.webp";
 
 const athletesData = [
   {
@@ -25,17 +25,17 @@ const athletesData = [
     speed: 0.2,
   },
   {
-    name: "Agustin Canobbio",
-    role: "Jogador de futebol",
-    image: agustinCanobbioImg,
-    id: "agustin-canobbio",
+    name: "Heitor Lemiska",
+    role: "Surfista",
+    image: heitorLemiskaImg,
+    id: "heitor-lemiska",
     speed: 0.12,
   },
   {
-    name: "Felipe Andrade",
-    role: "Jogador de futebol",
-    image: felipeAndradeImg,
-    id: "felipe-andrade",
+    name: "Akilles Lemiska",
+    role: "Surfista",
+    image: akillesLemiskaImg,
+    id: "akilles-lemiska",
     speed: 0.18,
   },
 ];
