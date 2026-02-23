@@ -106,7 +106,7 @@ const Atletas = () => {
             data-index={index}
             className={`${styles.card} ${styles[`card${index + 1}`]} ${
               visibleCards[index] ? styles.visible : ""
-            }`}
+            } ${athlete.id === "john-kennedy" ? styles.johnKennedyCard : ""}`}
             style={{
               transform: visibleCards[index]
                 ? `translateY(${parallaxOffsets[index] || 0}px)`

@@ -5,12 +5,12 @@ import styles from "./Stories.module.css";
 import cardImg1 from "../../assets/videosandphotos/photoUm.webp";
 import cardImg2 from "../../assets/videosandphotos/photoDois.webp";
 import cardVideo1 from "../../assets/videosandphotos/videoUm.webm";
-import cardImg3 from "../../assets/videosandphotos/photoTres.webp";
+
 import cardImg4 from "../../assets/videosandphotos/photoQuatro.webp";
-import cardImg5 from "../../assets/videosandphotos/photoCinco.jpg";
+
 import cardImg6 from "../../assets/videosandphotos/photoSeis.webp";
-import cardVideo2 from "../../assets/videosandphotos/videoDois.webm";
-import CardImg7 from "../../assets/videosandphotos/photoSete.webp";
+
+import CardImg7 from "../../assets/atletasSection/akilles-lemiska.webp";
 
 const Stories = () => {
   // Media items array com velocidades de parallax diferentes para cada card

@@ -159,6 +159,11 @@
   aspect-ratio: 1 / 1.4;
 }
 
+/* Ajuste específico para o card do John Kennedy */
+.johnKennedyCard .cardImage {
+  bottom: -100px;
+}
+
 .cardContent {
   position: relative;
   z-index: 2;

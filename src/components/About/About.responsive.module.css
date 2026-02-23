@@ -97,7 +97,7 @@
   .aboutLogos img {
     width: auto;
     height: 1.6rem;
-    max-width: 5rem;
+ 
     object-fit: contain;
   }
 }
@@ -134,6 +134,6 @@
 
   .aboutLogos img {
     height: 1.4rem;
-    max-width: 4.5rem;
+
   }
 }
